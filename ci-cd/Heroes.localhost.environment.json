@@ -1,0 +1,45 @@
+{
+  "id": "54bc3715-7f21-438a-a78f-723700e527cb",
+  "name": "Heroes (localhost)",
+  "values": [
+    {
+      "key": "id",
+      "value": "1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "enabled": true
+    },
+    {
+      "key": "hostUrl",
+      "value": "http://localhost:8080/",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "enabled": true
+    },
+    {
+      "key": "abilityId",
+      "value": 26,
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "enabled": true
+    },
+    {
+      "key": "characterId",
+      "value": 6,
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2018-09-09T17:12:18.364Z",
+  "_postman_exported_using": "Postman/6.3.0"
+}

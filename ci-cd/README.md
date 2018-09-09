@@ -10,6 +10,10 @@ Once Node.js is installed, Newman is just a command away. Install Newman from np
 
 > $ npm install -g newman
 
+If you will also want the test results to be exported to html:
+
+> npm install -g newman-reporter-html
+
 #### 2. Run Newman 
 You should provide both the api Collection and a Environment to attack to (it should be firstly created in Postman)
 

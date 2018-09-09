@@ -37,6 +37,7 @@ class AbilityController {
         ability.level = cmd.level ?: ability.level
         abilityBusinessService.createOrUpdate(ability)
 
+        response.status = 202
         render ability as JSON
     }
 

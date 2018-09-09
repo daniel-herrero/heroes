@@ -39,6 +39,7 @@ class CharacterController {
         character.properties = cmd
         characterBusinessService.createOrUpdate(character, abilityList)
 
+        response.status = 202
         render character as JSON
     }
 
@@ -46,6 +47,7 @@ class CharacterController {
         Character character = checkAndReturnCharacter(cmd.characterId)
         characterBusinessService.delete(character)
 
+        response.status = 204
         render [:] as JSON
     }
 

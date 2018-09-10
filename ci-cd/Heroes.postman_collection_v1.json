@@ -1,0 +1,1773 @@
+{
+	"id": "3ac23268-8350-b402-0103-419402cc73cc",
+	"name": "Heroes",
+	"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+	"auth": null,
+	"events": [],
+	"variables": [],
+	"order": [],
+	"folders_order": [
+		"eea93c14-4442-cdc3-abca-b4596fbe68e9",
+		"e04573d0-2620-c80a-a4fa-b52770a13802",
+		"e0bf9152-1dd7-4990-8cda-3e12c12b5c68",
+		"fda17533-6ed4-466b-98f3-bd45e206a6cf"
+	],
+	"folders": [
+		{
+			"id": "eea93c14-4442-cdc3-abca-b4596fbe68e9",
+			"name": "Abilities",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "3ac23268-8350-b402-0103-419402cc73cc",
+			"folder": null,
+			"order": [
+				"5c0b1891-6a6b-4fea-ba37-caf31ff9b4bb",
+				"c751dd35-41ce-4562-a7e3-6c1eb2ce0e4c",
+				"4178aaea-e7a5-e44c-0880-a7ff8c83dd3a"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "e04573d0-2620-c80a-a4fa-b52770a13802",
+			"name": "Characters",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "3ac23268-8350-b402-0103-419402cc73cc",
+			"folder": null,
+			"order": [
+				"04a3f93b-202a-46ab-8052-94740e62867f",
+				"895f1515-a824-42a5-baa4-6f85e56d74fb",
+				"017feea7-2829-aad8-c040-0cf0c9f5e639",
+				"e2c082d1-7a42-43ff-9f61-2f663dd38461"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "e0bf9152-1dd7-4990-8cda-3e12c12b5c68",
+			"name": "Error Codes",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "3ac23268-8350-b402-0103-419402cc73cc",
+			"folder": null,
+			"order": [
+				"00502a37-36e9-4749-967b-5a6531992dba",
+				"b10b71ea-a787-427f-8af5-db2d51ddd53f",
+				"aa07aab5-97c4-4dcd-824b-53decf180ae0",
+				"f929847f-781d-46a9-b4c5-ca474754ddb8",
+				"95276fa4-dc2b-41ee-ad10-a18fcdfe4652",
+				"c0fe9236-3a14-47f4-804e-3634cb965ea0"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "fda17533-6ed4-466b-98f3-bd45e206a6cf",
+			"name": "To be created",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "3ac23268-8350-b402-0103-419402cc73cc",
+			"folder": null,
+			"order": [
+				"c9d54d0b-a884-4488-8440-3017f9f9ece9"
+			],
+			"folders_order": []
+		}
+	],
+	"requests": [
+		{
+			"id": "00502a37-36e9-4749-967b-5a6531992dba",
+			"name": "error.404.page.notFound (Bad URL)",
+			"url": "{{hostUrl}}/characters_WRONG_URL_/{{id}}",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4326bf1-3411-46ff-bf51-52eb9c78ebbd",
+						"type": "text/javascript",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"HTTP status code is correct\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"",
+							"pm.test(\"JSON contains the correct content\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.code).to.eql(\"error.404.page.notFound\");",
+							"    pm.expect(jsonData.error.message).to.eql(\"Page not found\");",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"folder": "e0bf9152-1dd7-4990-8cda-3e12c12b5c68",
+			"responses": [
+				{
+					"id": "a373fa32-a6b4-45fd-82be-42b42a40e842",
+					"name": "error.404.page.notFound",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"error\":{\"code\":\"error.404.page.notFound\",\"message\":\"Page not found\"}}",
+					"responseCode": {
+						"code": 404,
+						"name": "Not Found",
+						"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/characters_WRONG_URL_/{{id}}",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": false
+							}
+						],
+						"data": "{}",
+						"method": "DELETE",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:40:24 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "00502a37-36e9-4749-967b-5a6531992dba",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				},
+				{
+					"id": "f6d8ac84-146d-4d10-9248-5c5cf4b62f5f",
+					"name": "delete character",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{}",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/characters/{{id}}",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"data": "{}",
+						"method": "DELETE",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:15:42 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "00502a37-36e9-4749-967b-5a6531992dba",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "017feea7-2829-aad8-c040-0cf0c9f5e639",
+			"name": "list characters",
+			"url": "{{hostUrl}}/characters",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f98f9c1f-30f1-4215-800d-cd0fe8896545",
+						"type": "text/javascript",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"folder": "e04573d0-2620-c80a-a4fa-b52770a13802",
+			"responses": [
+				{
+					"id": "241c604a-e8b0-466b-a02d-a52da451d245",
+					"name": "list characters",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "[{\"id\":1,\"fullName\":\"Clark Kent\",\"alterEgo\":\"Superman\",\"abilities\":[{\"id\":13,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"4/5\",\"name\":\"INCREDIBLE\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":17,\"name\":\"Flight\",\"level\":{\"power\":\"5/5\",\"name\":\"AMAZING\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"}]},{\"id\":2,\"fullName\":\"Peter Parker\",\"alterEgo\":\"Spiderman\",\"abilities\":[{\"id\":4,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"1/5\",\"name\":\"TYPICAL\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":12,\"name\":\"Early Warning\",\"level\":{\"power\":\"3/5\",\"name\":\"EXCELLENT\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"}]}]",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/characters",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true,
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"name\": \"Ability1\",\n    \"description\": \"Desc1\",\n    \"level\": 3\n}\n\n",
+						"method": "GET",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:13:54 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "017feea7-2829-aad8-c040-0cf0c9f5e639",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Ability1\",\n    \"description\": \"Desc1\",\n    \"level\": 3\n}\n\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "04a3f93b-202a-46ab-8052-94740e62867f",
+			"name": "create character",
+			"url": "{{hostUrl}}/characters",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ef1dd9a-9a05-4f52-a684-9d478a51528a",
+						"type": "text/javascript",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(201);",
+							"    ",
+							"    pm.environment.set(\"characterId\", pm.response.json().id)",
+							"});"
+						]
+					}
+				}
+			],
+			"folder": "e04573d0-2620-c80a-a4fa-b52770a13802",
+			"responses": [
+				{
+					"id": "55ed25b6-8970-4fe8-a89b-394763af0707",
+					"name": "create character",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"id\":3,\"fullName\":\"Champion of Valeron\",\"alterEgo\":\"Vartox\",\"abilities\":[{\"id\":13,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"4/5\",\"name\":\"INCREDIBLE\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":17,\"name\":\"Flight\",\"level\":{\"power\":\"5/5\",\"name\":\"AMAZING\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"}]}",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/characters",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true,
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"fullName\": \"Champion of Valeron\",\n    \"alterEgo\": \"Vartox\",\n    \"abilities\": [17, 13]\n}\n\n",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:15:27 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "04a3f93b-202a-46ab-8052-94740e62867f",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"fullName\": \"Champion of Valeron\",\n    \"alterEgo\": \"Vartox\",\n    \"abilities\": [17, 13]\n}\n\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "4178aaea-e7a5-e44c-0880-a7ff8c83dd3a",
+			"name": "list abilities",
+			"url": "{{hostUrl}}/abilities",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "eea93c14-4442-cdc3-abca-b4596fbe68e9",
+			"responses": [
+				{
+					"id": "10a418fd-7b32-4c3c-b4e0-e0b888839591",
+					"name": "list abilities",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "[{\"id\":1,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":2,\"name\":\"Flight\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":3,\"name\":\"Early Warning\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":4,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"1/5\",\"name\":\"TYPICAL\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":5,\"name\":\"Flight\",\"level\":{\"power\":\"1/5\",\"name\":\"TYPICAL\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":6,\"name\":\"Early Warning\",\"level\":{\"power\":\"1/5\",\"name\":\"TYPICAL\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":7,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"2/5\",\"name\":\"GOOD\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":8,\"name\":\"Flight\",\"level\":{\"power\":\"2/5\",\"name\":\"GOOD\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":9,\"name\":\"Early Warning\",\"level\":{\"power\":\"2/5\",\"name\":\"GOOD\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":10,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"3/5\",\"name\":\"EXCELLENT\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":11,\"name\":\"Flight\",\"level\":{\"power\":\"3/5\",\"name\":\"EXCELLENT\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":12,\"name\":\"Early Warning\",\"level\":{\"power\":\"3/5\",\"name\":\"EXCELLENT\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":13,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"4/5\",\"name\":\"INCREDIBLE\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":14,\"name\":\"Flight\",\"level\":{\"power\":\"4/5\",\"name\":\"INCREDIBLE\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":15,\"name\":\"Early Warning\",\"level\":{\"power\":\"4/5\",\"name\":\"INCREDIBLE\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":16,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"5/5\",\"name\":\"AMAZING\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":17,\"name\":\"Flight\",\"level\":{\"power\":\"5/5\",\"name\":\"AMAZING\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":18,\"name\":\"Early Warning\",\"level\":{\"power\":\"5/5\",\"name\":\"AMAZING\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"}]",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"requestObject": {
+						"url": "http://localhost:8080/abilities",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"data": "{\n    \"name\": \"Ability1\",\n    \"description\": \"Desc1\",\n    \"level\": 3\n}\n\n",
+						"method": "GET",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 18:53:16 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "4178aaea-e7a5-e44c-0880-a7ff8c83dd3a",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Ability1\",\n    \"description\": \"Desc1\",\n    \"level\": 3\n}\n\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "5c0b1891-6a6b-4fea-ba37-caf31ff9b4bb",
+			"name": "create ability",
+			"url": "{{hostUrl}}/abilities",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c04d33a9-0c08-47b2-a364-827ce6251de0",
+						"type": "text/javascript",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(201);",
+							"    ",
+							"    pm.environment.set(\"abilityId\", pm.response.json().id)",
+							"});"
+						]
+					}
+				}
+			],
+			"folder": "eea93c14-4442-cdc3-abca-b4596fbe68e9",
+			"responses": [
+				{
+					"id": "6e166df0-4344-4804-b74f-abb7ad2e1b5d",
+					"name": "create ability",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"id\":19,\"name\":\"X-Ray Vision\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"X-Ray Vision ability description\"}",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/abilities",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true,
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"name\": \"X-Ray Vision\",\n    \"description\": \"X-Ray Vision ability description\",\n    \"level\": 0\n}\n\n",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:14:34 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "5c0b1891-6a6b-4fea-ba37-caf31ff9b4bb",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"X-Ray Vision\",\n    \"description\": \"X-Ray Vision ability description\",\n    \"level\": 0\n}\n\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "895f1515-a824-42a5-baa4-6f85e56d74fb",
+			"name": "update character",
+			"url": "{{hostUrl}}/characters/{{id}}",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e81c753f-c4c6-44a2-b689-f39502e7278c",
+						"type": "text/javascript",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(202);",
+							"});"
+						]
+					}
+				}
+			],
+			"folder": "e04573d0-2620-c80a-a4fa-b52770a13802",
+			"responses": [
+				{
+					"id": "6d2598e5-be7a-4aa5-93d5-dd459d97da18",
+					"name": "update character",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"id\":1,\"fullName\":\"Clark Kent\",\"alterEgo\":\"Superman (Kryptonited)\",\"abilities\":[{\"id\":1,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"(Updated description)\"},{\"id\":2,\"name\":\"Flight\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"},{\"id\":19,\"name\":\"X-Ray Vision\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"X-Ray Vision ability description\"}]}",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/characters/{{id}}",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"fullName\": \"Clark Kent\",\n    \"alterEgo\": \"Superman (Kryptonited)\",\n    \"abilities\": [1, 2, 19]\n}",
+						"method": "PUT",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:15:12 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "895f1515-a824-42a5-baa4-6f85e56d74fb",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"fullName\": \"Clark Kent\",\n    \"alterEgo\": \"Superman (Kryptonited)\",\n    \"abilities\": [1, 2, 19]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "95276fa4-dc2b-41ee-ad10-a18fcdfe4652",
+			"name": "error.500.invalidParameters (JSON with wrong type param)",
+			"url": "{{hostUrl}}/abilities/{{id}}",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "e0bf9152-1dd7-4990-8cda-3e12c12b5c68",
+			"responses": [
+				{
+					"id": "910ca13d-cfd1-4fd4-b0d2-3a0433555d03",
+					"name": "error.500.invalidParameters (JSON with wrong type param)",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"error\":{\"code\":\"error.500.invalidParameters\",\"message\":\"Missing or invalid parameters\"}}",
+					"responseCode": {
+						"code": 500,
+						"name": "Internal Server Error",
+						"detail": "A generic error message, given when no more specific message is suitable."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/abilities/{{id}}",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"name\": \"Superhuman Strength\",\n    \"description\": \" (Updated description) \",\n    \"level\": \"aaaa\"\n}",
+						"method": "PUT",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Connection",
+							"value": "close",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Sep 2018 15:21:53 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "95276fa4-dc2b-41ee-ad10-a18fcdfe4652",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Superhuman Strength\",\n    \"description\": \" (Updated description) \",\n    \"level\": \"aaaa\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "aa07aab5-97c4-4dcd-824b-53decf180ae0",
+			"name": "error.500.missingParameters (JSON missing required param)",
+			"url": "{{hostUrl}}/abilities",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3fae48ab-feb2-43ec-a69c-3d1c34805ea0",
+						"type": "text/javascript",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"Verifying the HTTP status code is correct\", function () {",
+							"    pm.response.to.have.status(500);",
+							"",
+							"});",
+							"",
+							"pm.test(\"Testing the JSON contains the correct content\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.code).to.eql(\"error.500.invalidParameters\");",
+							"    pm.expect(jsonData.error.message).to.eql(\"Missing or invalid parameters\");",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"folder": "e0bf9152-1dd7-4990-8cda-3e12c12b5c68",
+			"responses": [
+				{
+					"id": "121f81ae-9a5c-41c3-a6ce-463cc473ef32",
+					"name": "error.500.missingParameters",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"error\":{\"code\":\"error.500.invalidParameters\",\"message\":\"Missing or invalid parameters\"}}",
+					"responseCode": {
+						"code": 500,
+						"name": "Internal Server Error",
+						"detail": "A generic error message, given when no more specific message is suitable."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/abilities",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true,
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"name\": null,\n    \"description\": \"X-Ray Vision ability description\",\n    \"level\": 0\n}\n\n",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Connection",
+							"value": "close",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:24:06 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "aa07aab5-97c4-4dcd-824b-53decf180ae0",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				},
+				{
+					"id": "fa3117cd-3661-4f33-bbfa-d0c5bc6c4a80",
+					"name": "create ability",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"id\":19,\"name\":\"X-Ray Vision\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"X-Ray Vision ability description\"}",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/abilities",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true,
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"name\": \"X-Ray Vision\",\n    \"description\": \"X-Ray Vision ability description\",\n    \"level\": 0\n}\n\n",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:14:34 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "aa07aab5-97c4-4dcd-824b-53decf180ae0",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"name\": null,\n    \"description\": \"X-Ray Vision ability description\",\n    \"level\": 0\n}\n\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b10b71ea-a787-427f-8af5-db2d51ddd53f",
+			"name": "error.404.element.notFound (URL with bad identifier)",
+			"url": "{{hostUrl}}/characters/9999",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12f59007-2145-4f91-8144-41fce006ab56",
+						"type": "text/javascript",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						]
+					}
+				}
+			],
+			"folder": "e0bf9152-1dd7-4990-8cda-3e12c12b5c68",
+			"responses": [
+				{
+					"id": "0d56493f-f126-426b-8bd4-6de0153dd1f3",
+					"name": "error.404.element.notFound (URL with bad identifier)",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"error\":{\"code\":\"error.404.element.notFound\",\"message\":\"A required object doesn't exist\"}}",
+					"responseCode": {
+						"code": 404,
+						"name": "Not Found",
+						"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/characters/9999",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"fullName\": \"Clark Kent\",\n    \"alterEgo\": \"Superman (Kryptonited)\",\n    \"abilities\": [1, 2, 19]\n}",
+						"method": "PUT",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Sep 2018 15:21:32 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "b10b71ea-a787-427f-8af5-db2d51ddd53f",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"fullName\": \"Clark Kent\",\n    \"alterEgo\": \"Superman (Kryptonited)\",\n    \"abilities\": [1, 2, 19]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c0fe9236-3a14-47f4-804e-3634cb965ea0",
+			"name": "error.500.invalidParameters (JSON with links  to unexisting objects)",
+			"url": "{{hostUrl}}/abilities",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "e0bf9152-1dd7-4990-8cda-3e12c12b5c68",
+			"responses": [
+				{
+					"id": "7e57284c-ca8d-45ec-8867-4b98c995d17d",
+					"name": "error.500.invalidParameters",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"error\":{\"code\":\"error.500.invalidParameters\",\"message\":\"Missing or invalid parameters\"}}",
+					"responseCode": {
+						"code": 500,
+						"name": "Internal Server Error",
+						"detail": "A generic error message, given when no more specific message is suitable."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/abilities",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true,
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"name\": \"X-Ray Vision\",\n    \"description\": \"X-Ray Vision ability description\",\n    \"level\": 99999\n}\n\n",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Connection",
+							"value": "close",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:24:21 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "c0fe9236-3a14-47f4-804e-3634cb965ea0",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"X-Ray Vision\",\n    \"description\": \"X-Ray Vision ability description\",\n    \"level\": 99999\n}\n\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c751dd35-41ce-4562-a7e3-6c1eb2ce0e4c",
+			"name": "update ability",
+			"url": "{{hostUrl}}/abilities/{{abilityId}}",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "babddead-3d3a-4b05-9680-4181d187b3e9",
+						"type": "text/javascript",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(202);",
+							"});"
+						]
+					}
+				}
+			],
+			"folder": "eea93c14-4442-cdc3-abca-b4596fbe68e9",
+			"responses": [
+				{
+					"id": "02710b43-f643-404e-9aab-064777a996c3",
+					"name": "update ability",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"id\":1,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"(Updated description)\"}",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/abilities/{{id}}",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"name\": \"Superhuman Strength\",\n    \"description\": \" (Updated description) \",\n    \"level\": 0\n}",
+						"method": "PUT",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:33:15 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "c751dd35-41ce-4562-a7e3-6c1eb2ce0e4c",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				},
+				{
+					"id": "38613d60-6057-481e-8973-cded30d7c644",
+					"name": "update ability",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"id\":1,\"name\":\"Superhuman Strength\",\"level\":{\"power\":\"0/5\",\"name\":\"POOR\"},\"description\":\"(Updated description)\"}",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/abilities/{{id}}",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"name\": \"Superhuman Strength\",\n    \"description\": \" (Updated description) \",\n    \"level\": 0\n}",
+						"method": "PUT",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Sep 2018 15:14:29 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "c751dd35-41ce-4562-a7e3-6c1eb2ce0e4c",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Superhuman Strength\",\n    \"description\": \" (Updated description) \",\n    \"level\": 0\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c9d54d0b-a884-4488-8440-3017f9f9ece9",
+			"name": "add ability to character",
+			"url": "{{hostUrl}}/characters/{{id}}/abilities",
+			"description": "Just a request made with no app running yet with the rest of the team",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "fda17533-6ed4-466b-98f3-bd45e206a6cf",
+			"responses": [
+				{
+					"id": "e790e59a-fa72-4b1b-b6a4-88a0c5136935",
+					"name": "to be deleted",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\n    \"id\": 3,\n    \"fullName\": \"Champion of Valeron\",\n    \"alterEgo\": \"Vartox\",\n    \"abilities\": [\n        {\n            \"id\": 13,\n            \"name\": \"Superhuman Strength\",\n            \"level\": {\n                \"power\": \"4/5\",\n                \"name\": \"INCREDIBLE\"\n            },\n            \"description\": \"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Flight\",\n            \"level\": {\n                \"power\": \"5/5\",\n                \"name\": \"AMAZING\"\n            },\n            \"description\": \"This fictional hero has extraordinary powers to use in his fight against crime and evil. \"\n        }\n    ]\n}",
+					"responseCode": {
+						"code": 201,
+						"name": "OK"
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/characters/{{id}}/abilities",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"data": "{\n\t\"abilityList\": [13, 17]\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookies": [],
+					"request": "c9d54d0b-a884-4488-8440-3017f9f9ece9",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n\t\"abilityList\": [13, 17]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "e2c082d1-7a42-43ff-9f61-2f663dd38461",
+			"name": "delete character",
+			"url": "{{hostUrl}}/characters/{{characterId}}",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc33dbd7-d80e-4cfe-a690-8483d605b116",
+						"type": "text/javascript",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"folder": "e04573d0-2620-c80a-a4fa-b52770a13802",
+			"responses": [
+				{
+					"id": "87a729eb-4025-403e-924a-5cb9244a4b24",
+					"name": "delete character",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{}",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/characters/{{id}}",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"data": "{}",
+						"method": "DELETE",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Sep 2018 19:15:42 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "e2c082d1-7a42-43ff-9f61-2f663dd38461",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "f929847f-781d-46a9-b4c5-ca474754ddb8",
+			"name": "error.500.missingParameters (URL missing required param)",
+			"url": "{{hostUrl}}/abilities/",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "e0bf9152-1dd7-4990-8cda-3e12c12b5c68",
+			"responses": [
+				{
+					"id": "ea08c9b4-9f1e-47bd-b55a-3cb1d56497c4",
+					"name": "error.500.missingParameters (URL missing required param)",
+					"status": "",
+					"mime": "",
+					"language": "json",
+					"text": "{\"error\":{\"code\":\"error.500.invalidParameters\",\"message\":\"Missing or invalid parameters\"}}",
+					"responseCode": {
+						"code": 500,
+						"name": "Internal Server Error",
+						"detail": "A generic error message, given when no more specific message is suitable."
+					},
+					"requestObject": {
+						"url": "{{hostUrl}}/abilities/",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": false
+							}
+						],
+						"data": "{\n    \"name\": \"Superhuman Strength\",\n    \"description\": \" (Updated description) \",\n    \"level\": 0\n}",
+						"method": "PUT",
+						"dataMode": "raw"
+					},
+					"headers": [
+						{
+							"key": "Connection",
+							"value": "close",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Sep 2018 15:21:40 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:development",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [
+						{
+							"domain": "localhost",
+							"expirationDate": 2147483647,
+							"httpOnly": true,
+							"name": "JSESSIONID",
+							"path": "/",
+							"secure": false,
+							"url": "http://localhost:8080",
+							"value": "AFC8E8275DA299AAEDABD1ADA4FFF420"
+						}
+					],
+					"request": "f929847f-781d-46a9-b4c5-ca474754ddb8",
+					"collection": "3ac23268-8350-b402-0103-419402cc73cc"
+				}
+			],
+			"rawModeData": "{\n    \"name\": \"Superhuman Strength\",\n    \"description\": \" (Updated description) \",\n    \"level\": 0\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}

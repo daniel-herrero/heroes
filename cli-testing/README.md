@@ -24,7 +24,7 @@ Or simply call the script to do this for you:
 >   $./runAllTests.sh
 
 #### 3. Reviewing the Results (CLI/reports)
-Appart from the data shown in the console, there should be a newman directory with other requested report formats (html, xml, json)
+Apart from the data shown in the console, there should be a newman directory with other requested report formats (html, xml, json)
 
 Example: newman-run-report-2017-12-13-12-21-42-061-0.html
 
@@ -36,7 +36,3 @@ https://www.getpostman.com/docs/postman/launching_postman/installation_and_updat
 
 Newman
 https://www.getpostman.com/docs/postman/collection_runs/command_line_integration_with_newman
-- Type some Markdown on the left
-- See HTML in the right
-- Magic
-

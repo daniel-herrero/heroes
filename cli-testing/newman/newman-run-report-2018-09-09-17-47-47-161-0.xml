@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Heroes" tests="13" time="0.230">
+  <testsuite name="Abilities / create ability" id="31566ff4-6312-4b7f-84d7-74280513368a" tests="1" failures="0" errors="0" time="0.037">
+    <testcase name="response is ok" time="0.037"/>
+  </testsuite>
+  <testsuite name="Abilities / update ability" id="e6c1c488-a30f-40b7-b745-0bdcc9c7ed40" tests="1" failures="0" errors="0" time="0.011">
+    <testcase name="response is ok" time="0.011"/>
+  </testsuite>
+  <testsuite name="Abilities / list abilities" id="5b02e137-ed02-41f8-9be6-b5c6d16044a1" tests="1" failures="0" errors="0" time="0.011">
+    <testcase name="response is ok" time="0.011"/>
+  </testsuite>
+  <testsuite name="Characters / create character" id="b059d3b8-e934-4123-9768-6b82a71f89ef" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="response is ok" time="0.009"/>
+  </testsuite>
+  <testsuite name="Characters / update character" id="ac786881-a347-49d8-9f8e-c01742f986f8" tests="1" failures="0" errors="0" time="0.028">
+    <testcase name="response is ok" time="0.028"/>
+  </testsuite>
+  <testsuite name="Characters / list characters" id="26c99047-6fc9-4f4b-aa6f-8eedacca07f8" tests="1" failures="0" errors="0" time="0.013">
+    <testcase name="response is ok" time="0.013"/>
+  </testsuite>
+  <testsuite name="Characters / delete character" id="9237a5d6-84de-4bb2-a932-fea6147e3923" tests="1" failures="0" errors="0" time="0.011">
+    <testcase name="response is ok" time="0.011"/>
+  </testsuite>
+  <testsuite name="Errors / error.404.page.notFound (Bad URL)" id="f34e4ade-94be-4b7f-b5c4-015b277f4876" tests="3" failures="0" errors="0" time="0.003">
+    <testcase name="Verifying the HTTP status code is correct" time="0.003"/>
+    <testcase name="Testing the JSON contains the correct content" time="0.003"/>
+    <testcase name="Response time is less than 200ms" time="0.003"/>
+  </testsuite>
+  <testsuite name="Errors / error.404.element.notFound (URL with bad identifier)" id="5ccb7898-ac22-4781-ad4d-39b0340aac22" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="response is ok" time="0.009"/>
+  </testsuite>
+  <testsuite name="Errors / error.500.missingParameters (JSON missing required param)" id="144a98b5-39ec-4d0b-905d-a014416a10a9" tests="3" failures="0" errors="0" time="0.044">
+    <testcase name="Verifying the HTTP status code is correct" time="0.044"/>
+    <testcase name="Testing the JSON contains the correct content" time="0.044"/>
+    <testcase name="Response time is less than 200ms" time="0.044"/>
+  </testsuite>
+  <testsuite name="Errors / error.500.missingParameters (URL missing required param)" id="252bfddc-53cf-4b15-be01-35063c8666c5" tests="0" failures="0" errors="0" time="0.010"/>
+  <testsuite name="Errors / error.500.invalidParameters (JSON with wrong type param)" id="eaa6a275-478a-4b17-b016-ca99ef958388" tests="0" failures="0" errors="0" time="0.028"/>
+  <testsuite name="Errors / error.500.invalidParameters (JSON with links  to unexisting objects)" id="3fad082d-e912-4131-897a-4584e01f7328" tests="0" failures="0" errors="0" time="0.016"/>
+</testsuites>

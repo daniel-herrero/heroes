@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Heroes" tests="14" time="0.000">
+  <testsuite name="Abilities / create ability" id="86ae618a-fd9f-4e93-83e8-1e7f7262157c" tests="1" failures="1" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+    <testcase name="response is ok" time="0.000" classname="Abilities / create ability">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Abilities / create ability.]]>
+        <![CDATA[Test description: response is ok.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:1).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Abilities / update ability" id="7eea1c81-1528-449f-b885-d0f65d3a6fcb" tests="1" failures="1" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+    <testcase name="response is ok" time="0.000" classname="Abilities / update ability">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Abilities / update ability.]]>
+        <![CDATA[Test description: response is ok.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:2).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Abilities / list abilities" id="1f158a08-8481-4bb7-89c4-9c5b6ca9d894" tests="0" failures="0" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+  </testsuite>
+  <testsuite name="Characters / create character" id="839d5c13-9bac-494e-a4a1-43ea4a0cbdf5" tests="1" failures="1" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+    <testcase name="response is ok" time="0.000" classname="Characters / create character">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Characters / create character.]]>
+        <![CDATA[Test description: response is ok.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:4).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Characters / update character" id="adb7264b-f449-4e18-a466-eafc1ed0e62d" tests="1" failures="1" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+    <testcase name="response is ok" time="0.000" classname="Characters / update character">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Characters / update character.]]>
+        <![CDATA[Test description: response is ok.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:5).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Characters / list characters" id="89bc36c6-ee92-4ab1-b900-911baf1d3a08" tests="1" failures="1" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+    <testcase name="response is ok" time="0.000" classname="Characters / list characters">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Characters / list characters.]]>
+        <![CDATA[Test description: response is ok.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:6).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Characters / delete character" id="839c7a95-a0b6-4d6c-86a1-b3a6cd4e563d" tests="1" failures="1" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+    <testcase name="response is ok" time="0.000" classname="Characters / delete character">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Characters / delete character.]]>
+        <![CDATA[Test description: response is ok.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:7).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Error Codes / error.404.page.notFound (Bad URL)" id="7a985753-bfa0-45fc-8a35-d372d719ab13" tests="3" failures="3" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+    <testcase name="HTTP status code is correct" time="0.000" classname="Error Codes / error.404.page.notFound (Bad URL)">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Error Codes / error.404.page.notFound (Bad URL).]]>
+        <![CDATA[Test description: HTTP status code is correct.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:8).]]>
+      </failure>
+    </testcase>
+    <testcase name="JSON contains the correct content" time="0.000" classname="Error Codes / error.404.page.notFound (Bad URL)">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Error Codes / error.404.page.notFound (Bad URL).]]>
+        <![CDATA[Test description: JSON contains the correct content.]]>
+        <![CDATA[Error message: Unexpected token u in JSON at position 0.]]>
+        <![CDATA[Stacktrace: JSONError: Unexpected token u in JSON at position 0
+   at Object.eval sandbox-script.js:2:8).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response time is less than 200ms" time="0.000" classname="Error Codes / error.404.page.notFound (Bad URL)">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Error Codes / error.404.page.notFound (Bad URL).]]>
+        <![CDATA[Test description: Response time is less than 200ms.]]>
+        <![CDATA[Error message: expected undefined to be a number or a date.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to be a number or a date
+   at Object.eval sandbox-script.js:3:8).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Error Codes / error.404.element.notFound (URL with bad identifier)" id="59847807-7234-4c08-8f5a-148ebeeca7d1" tests="1" failures="1" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+    <testcase name="response is ok" time="0.000" classname="Error Codes / error.404.element.notFound (URL with bad identifier)">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Error Codes / error.404.element.notFound (URL with bad identifier).]]>
+        <![CDATA[Test description: response is ok.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:9).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Error Codes / error.500.missingParameters (JSON missing required param)" id="fa91dc62-fc22-4632-a169-fb7d95bb8780" tests="3" failures="3" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+    <testcase name="Verifying the HTTP status code is correct" time="0.000" classname="Error Codes / error.500.missingParameters (JSON missing required param)">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Error Codes / error.500.missingParameters (JSON missing required param).]]>
+        <![CDATA[Test description: Verifying the HTTP status code is correct.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:10).]]>
+      </failure>
+    </testcase>
+    <testcase name="Testing the JSON contains the correct content" time="0.000" classname="Error Codes / error.500.missingParameters (JSON missing required param)">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Error Codes / error.500.missingParameters (JSON missing required param).]]>
+        <![CDATA[Test description: Testing the JSON contains the correct content.]]>
+        <![CDATA[Error message: Unexpected token u in JSON at position 0.]]>
+        <![CDATA[Stacktrace: JSONError: Unexpected token u in JSON at position 0
+   at Object.eval sandbox-script.js:2:10).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response time is less than 200ms" time="0.000" classname="Error Codes / error.500.missingParameters (JSON missing required param)">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 3ac23268-8350-b402-0103-419402cc73cc.]]>
+        <![CDATA[Collection name: Heroes.]]>
+        <![CDATA[Request name: Error Codes / error.500.missingParameters (JSON missing required param).]]>
+        <![CDATA[Test description: Response time is less than 200ms.]]>
+        <![CDATA[Error message: expected undefined to be a number or a date.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to be a number or a date
+   at Object.eval sandbox-script.js:3:10).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Error Codes / error.500.missingParameters (URL missing required param)" id="3ddb7b5b-18af-4a2e-adfa-2ffd91ca1f3f" tests="0" failures="0" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+  </testsuite>
+  <testsuite name="Error Codes / error.500.invalidParameters (JSON with wrong type param)" id="bec09fdd-c761-4ce6-8a1b-5f486a9d7aa8" tests="0" failures="0" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+  </testsuite>
+  <testsuite name="Error Codes / error.500.invalidParameters (JSON with links  to unexisting objects)" id="e97eb2ce-f96a-49b8-8cc2-119980c1d988" tests="0" failures="0" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+  </testsuite>
+  <testsuite name="To be created / add ability to character" id="695361ea-a14b-4e10-bf3a-b2cb0660fdcc" tests="0" failures="0" errors="1" time="0.000">
+    <error>
+      <![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1158:14)
+
+---
+]]>
+    </error>
+  </testsuite>
+</testsuites>
